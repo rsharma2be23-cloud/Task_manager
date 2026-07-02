@@ -1,6 +1,7 @@
 from fastapi import FastAPI
-from src.utils.DB import base,engine
+from src.utils.DB import Base, engine
+from src.tasks.models import TaskModel
 
-base.metadata.create_all(engine)
+Base.metadata.create_all(bind=engine)
 
-app=FastAPI(title="this is my task managment application")
+app = FastAPI(title="This is my task management application")
